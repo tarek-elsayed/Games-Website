@@ -50,6 +50,24 @@ a:hover {
   left: 100%;
   background-color: rgba(163, 255, 0, 0.8);
 }
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.title-wrapper span {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #c6ff00);
+  position: relative;
+  top: -8px;
+}
+
+.title-wrapper span:last-child {
+  background: linear-gradient(to left, transparent, #c6ff00);
+}
 
 /***** End Global *****/
 
@@ -163,24 +181,6 @@ a:hover {
 /***** End Home *****/
 
 /***** Our Games *****/
-.games .title-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.games .title-wrapper span {
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #c6ff00);
-  position: relative;
-  top: -8px;
-}
-
-.games .title-wrapper span:last-child {
-  background: linear-gradient(to left, transparent, #c6ff00);
-}
 
 .carousel-indicators [data-bs-target] {
   transition: none;
@@ -195,26 +195,26 @@ a:hover {
 .my-carousel .btn-next {
   top: 500px;
   left: 535px;
-
 }
-.btn-prev span, .btn-next span{
-    border: 1px solid #99a1af;
-    padding: 18px;
-    border-radius: 50%;
+.btn-prev span,
+.btn-next span {
+  border: 1px solid #99a1af;
+  padding: 18px;
+  border-radius: 50%;
 }
-.btn-prev:hover span , .btn-next:hover span{
-    border: 1px solid #c6ff00;
-    color: #c6ff00;
+.btn-prev:hover span,
+.btn-next:hover span {
+  border: 1px solid #c6ff00;
+  color: #c6ff00;
 }
-
 
 .my-carousel .view-all-btn {
   position: relative;
   bottom: -45px;
   left: 35px;
-    border: 2px solid #c6ff00;
-    padding: 20px 40px;
-    margin-left: 55px;
+  border: 2px solid #c6ff00;
+  padding: 20px 40px;
+  margin-left: 55px;
 }
 .game-card {
   position: relative;
@@ -224,59 +224,55 @@ a:hover {
   transition: 0.4s;
 }
 
-/* الصورة */
 .game-card img {
   display: block;
   border-radius: 20px;
 }
 
-/* التاجز فوق */
 .tags {
   position: absolute;
   top: 15px;
   left: 15px;
   display: flex;
   gap: 10px;
-
   opacity: 0;
   transform: translateY(-20px);
   transition: 0.4s;
 }
 
 .tags span {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 12px;
 }
 
-/* العنوان تحت */
 .game-card .title {
   position: absolute;
   bottom: 15px;
   left: 15px;
   color: #000;
+  /* font-weight: bold; */
   padding: 5px 10px;
   border-radius: 5px;
   opacity: 0;
   transform: translateY(20px);
   transition: 0.4s;
+  z-index: 1;
 }
 
-/* 🔥 hover */
 .game-card:hover .tags,
 .game-card:hover .title {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* الشادو الأخضر */
 .game-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(200, 255, 0, 0.136);
+  background: rgba(200, 255, 0, 0.112);
   opacity: 0;
   transition: 0.4s;
 }
@@ -285,3 +281,146 @@ a:hover {
   opacity: 1;
 }
 /***** End Our Games *****/
+
+/***** What-we-do *****/
+.container .row .card {
+  border-radius: 0.9375rem;
+  background-color: #1a1a1a;
+  position: relative;
+}
+.container .row .card .box {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  /* visibility: hidden; */
+}
+.container .row .card .left-arrow {
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    315deg,
+    transparent 50%,
+    var(--main-color) 50%
+  ) !important;
+  transition: all 0.1s ease-in-out;
+  visibility: hidden;
+}
+.container .row .card .right-arrow {
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    315deg,
+    var(--main-color) 50%,
+    transparent 50%
+  ) !important;
+  transition: all 0.1s ease-in-out;
+  visibility: hidden;
+}
+.container .row .card:hover {
+  border: 1px solid var(--main-color);
+}
+.container .row .card:hover .left-arrow {
+  transform: translate(20px, 20px);
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+}
+.container .row .card:hover .right-arrow {
+  transform: translate(-20px, -20px);
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+}
+.container .row .card .card-content {
+  height: 250px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0px;
+}
+.container .row .card .card-img img {
+  border-radius: 12px;
+  height: 250px;
+}
+
+.row .card .icon {
+  padding: 15px 15px;
+  background-color: #1e2939;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  font-size: 25px;
+  color: var(--main-color);
+}
+.container .row .card:hover .card-content .icon {
+  background-color: var(--main-color) !important;
+  color: #000;
+}
+.glow-line {
+  width: 60%;
+  height: 3px;
+  margin: 50px auto;
+  background: linear-gradient(to right, transparent, #cbfe1c, transparent);
+
+  /* الجلو */
+  box-shadow:
+    0 0 10px #cbfe1c,
+    0 0 20px #cbfe1c,
+    0 0 40px #cbfe1c;
+}
+.container .carousel-show {
+  overflow-x: hidden;
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+.container .carousel-show::-webkit-scrollbar {
+  display: none;
+}
+.carousel-show .group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-right: 10px;
+}
+.carousel-show .group .card-img{
+    flex: 0 0 5em;
+}
+.carousel-show .group img {
+  width: 10%;
+  border-radius: 15px;
+ 
+}
+.carousel-show .group.left{
+  animation: spin-left 35s infinite linear;
+
+}
+.carousel-show .group.right{
+  animation: spin-right 35s infinite linear;
+
+}
+
+@keyframes spin-left {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
+@keyframes spin-right {
+  from {
+    translate: -100%;
+  }
+  to {
+    translate: 0;
+  }
+}
+.bg-radial{
+    padding: 10px;
+    background: radial-gradient(circle,rgba(233, 214, 47, 0.476) 23%, transparent 45%);
+}
+
+
+/***** End What-we-do *****/
