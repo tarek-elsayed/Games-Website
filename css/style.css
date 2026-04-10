@@ -384,21 +384,18 @@ a:hover {
   gap: 10px;
   padding-right: 10px;
 }
-.carousel-show .group .card-img{
-    flex: 0 0 5em;
+.carousel-show .group .card-img {
+  flex: 0 0 5em;
 }
 .carousel-show .group img {
   width: 10%;
   border-radius: 15px;
- 
 }
-.carousel-show .group.left{
+.carousel-show .group.left {
   animation: spin-left 35s infinite linear;
-
 }
-.carousel-show .group.right{
+.carousel-show .group.right {
   animation: spin-right 35s infinite linear;
-
 }
 
 @keyframes spin-left {
@@ -417,10 +414,75 @@ a:hover {
     translate: 0;
   }
 }
-.bg-radial{
-    padding: 10px;
-    background: radial-gradient(circle,rgba(233, 214, 47, 0.476) 23%, transparent 45%);
+.bg-radial {
+  padding: 10px;
+  background: radial-gradient(
+    circle,
+    rgba(233, 214, 47, 0.476) 23%,
+    transparent 45%
+  );
 }
 
-
 /***** End What-we-do *****/
+
+/***** Our Team *****/
+
+.team .row .card-content .img-content img {
+  border-radius: 12px;
+}
+
+.team .row .card-content .left-content {
+  margin-bottom: 10px;
+}
+.team .row .card-content .left-content h4 {
+  font-size: 18px;
+}
+.team .row .card-content .left-content p {
+  font-size: 12px;
+  margin: 0;
+  transition: color 0.8s ease-in-out;
+}
+.team .row .card-content .left-content small {
+  font-size: 8px;
+}
+.team .row .card-content .content {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+/* .team .row .card-content .right-content {
+    width: 0;
+    height: 0;
+} */
+.team .row .card-content .right-content .flying-p {
+  transform: rotate(90deg);
+  position: relative;
+  top: 10px;
+  left: 44px;
+  transition: color 0.8s ease-in-out;
+}
+
+.div-hover {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  height: 100%;
+  border-radius: 12px;
+  margin: 0px 12px;
+  transition: height 0.8s ease-in-out;
+  background-color: #180d0dc4;
+}
+
+.all-card:hover .div-hover {
+  height: 0%;
+}
+.all-card:hover .flying-p {
+  color: var(--main-color);
+}
+.all-card:hover .left-content p {
+  color: var(--main-color);
+}
+
+/***** End Our Team *****/
